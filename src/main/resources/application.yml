@@ -1,0 +1,5 @@
+azure:
+    url: ${AZURE_API_URL:none}
+    openApiKey: ${AZURE_API_KEY:none}
+    chatGptVersion: gpt-35-turbo-instruct
+
