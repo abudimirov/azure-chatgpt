@@ -1,1 +1,58 @@
+pluginManagement {
+    repositories {
+        maven {
+            url "https://artifactory.devops.telekom.de/artifactory/gradle-plugins/"
+            credentials {
+                username System.getenv("ARTIFACTORY_USERNAME")
+                password System.getenv("ARTIFACTORY_PASSWORD")
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    ext {
+        job_token = System.getenv("CI_JOB_TOKEN")
+    }
+    repositories {
+        maven {
+            url "${gitlabPackageRegistry}"
+            name "gitlab-gradle"
+            credentials(HttpHeaderCredentials) {
+                if (job_token != null) {
+                    name = "Job-Token"
+                    value = job_token
+                } else {
+                    name = 'Private-Token'
+                    value = System.getenv("PRIVATE_TOKEN")
+                }
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+        maven {
+            url "https://artifactory.devops.telekom.de/artifactory/magenta-business-gradle-remote/"
+            credentials {
+                username System.getenv("ARTIFACTORY_USERNAME")
+                password System.getenv("ARTIFACTORY_PASSWORD")
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+        maven {
+            url "https://artifactory.devops.telekom.de/artifactory/maven-central/"
+            credentials {
+                username System.getenv("ARTIFACTORY_USERNAME")
+                password System.getenv("ARTIFACTORY_PASSWORD")
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
 rootProject.name = 'azure-ai-hackathon'

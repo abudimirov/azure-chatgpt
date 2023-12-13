@@ -1,5 +1,5 @@
 azure:
-    url: ${AZURE_API_URL:none}
-    openApiKey: ${AZURE_API_KEY:none}
-    chatGptVersion: gpt-35-turbo-instruct
+    url: https://api.ril.one
+    openApiKey: sk-r1bxx8ph71j404shsv366osvkakac30bkvbafi52tv24f4qfrr
+    chatGptVersion: gpt4dtit-32k
 
