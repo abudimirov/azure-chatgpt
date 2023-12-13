@@ -1,5 +1,5 @@
 azure:
-    url: https://api.ril.one
+    url: https://api.ril.one/openai/deployments/elmar/chat/completions?api-version=2023-12-01-preview
     openApiKey: sk-r1bxx8ph71j404shsv366osvkakac30bkvbafi52tv24f4qfrr
     chatGptVersion: gpt4dtit-32k
 
