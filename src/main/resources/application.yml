@@ -3,3 +3,7 @@ azure:
     openApiKey: sk-r1bxx8ph71j404shsv366osvkakac30bkvbafi52tv24f4qfrr
     chatGptVersion: gpt4dtit-32k
 
+proxy:
+    host: sia-lb.telekom.de
+    port: 8080
+    enabled: ${ENABLE_PROXY:false}
